@@ -28,7 +28,7 @@ public class StripeWebhookController {
 		this.stripeService = stripeService;
 	}
 
-	@PostMapping("stripe/webhook")
+	@PostMapping("/stripe/webhook")
 	public ResponseEntity<String> webhook(@RequestBody String payload, @RequestHeader("Stripe-Signature") String sigHeader) {
 		Stripe.apiKey = stripeApiKey;
 		Event event = null;
